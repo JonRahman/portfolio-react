@@ -11,10 +11,10 @@ const App = () => {
     <Router>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/About" component={About} />
-        <Route path="/Projects" component={Projects} />
-        <Route path="/Contacts" component={Contacts} />
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/contacts" component={Contacts} />
       </Switch>
     </Router>
   );
