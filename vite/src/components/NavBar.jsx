@@ -1,28 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Projects from './Projects';
+import Contacts from './Contacts';
+import NavBar from './NavBar';
 
-const NavBar = () => {
+const App = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-            <Link to="/">Home</Link>
-        </li>
-        
-        <li>
-            <Link to="/About">About</Link>
-        </li>
-        
-        <li>
-            <Link to="/Projects">Projects</Link>
-        </li>
-        
-        <li>
-            <Link to="/Contacts">Contacts</Link>
-        </li>
-      </ul>
-    </nav>
-  )
-}
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/About" component={About} />
+        <Route path="/Projects" component={Projects} />
+        <Route path="/Contacts" component={Contacts} />
+      </Switch>
+    </Router>
+  );
+};
 
-export default NavBar;
+export default App;
